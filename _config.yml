@@ -6,20 +6,3 @@ url: "https://www.secretescapes.com" # the base hostname & protocol for your sit
 # Build settings
 markdown: kramdown
 exclude: [node_modules, gulpfile.js, bower.json, package.json, README.md, js/script.js, js/modernizr-custom.js]
-
-
-####################   offers   ####################
-
-# create custom collection
-collections:
-  offers:
-    output: true
-    permalink: /offers/:path/
-# set default layout for collection
-defaults:
-  -
-    scope:
-      path: ""
-      type: "offers"
-    values:
-      layout: "offer"
