@@ -8,7 +8,7 @@ $main-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 html { font-size:62.5%; }
 body,
 input, textarea, keygen, select, button {
-  font: 400 12px/1.728 $main-font-family;
+  font: 400 14px/1.728 $main-font-family;
   letter-spacing: -.015em;
   -webkit-text-size-adjust: 100%;
   @include bp( small-height ){
@@ -55,7 +55,72 @@ h4, .h4 { font-size: 1.728em; }
   ol li         { list-style-type: decimal; }
   em            { font-style: italic; }
   strong        { font-weight: 600; }
-  .align-left   { text-align: left; }
-  .align-right  { text-align: right; }
-  .align-center { text-align: center; }
+}
+.align-left   { text-align: left; }
+.align-right  { text-align: right; }
+.align-center { text-align: center; }
+
+blockquote {
+  border-left: 2px solid #ff9009;
+  margin: 1.5em 10px 1.5em 0;
+  padding: 0 20px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: '“' ;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.15em;
+  vertical-align: -0.5em;
+}
+blockquote p.heading-spacing {
+  display: inline;
+}
+blockquote p {
+  margin-top: 0.5em;
+}
+blockquote p.author {
+  color: #ff9009;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.94em;
+}
+
+.standard__content ol,
+.standard--fullpage__content ol {
+  counter-reset: item;
+  margin-top: 1.2em;
+  li {
+    display: block;
+    margin-bottom: 0.6em;
+    margin-left: 15px;
+    line-height: 1.6;
+    &:before {
+      content: counter(item) ". ";
+      counter-increment: item;
+      color: #ff9009;
+      margin-left: -15px;
+    }
+  }
+}
+
+.standard__content ul,
+.standard--fullpage__content ul {
+  counter-reset: item;
+  margin-top: 1.2em;
+  li {
+    display: block;
+    margin-bottom: 0.6em;
+    margin-left: 10px;
+    text-indent: -5px;
+    line-height: 1.6;
+    &:before {
+      content: "•";
+      display: inline-block;
+      margin-right: 6px;
+      color: #ff9009;
+    }
+  }
 }

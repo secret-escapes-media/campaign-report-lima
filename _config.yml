@@ -1,7 +1,7 @@
 # Site settings
-title: Campaign Report Example
-baseurl: "/campaign-report/example" # the subpath of your site, e.g. /blog/
-url: "https://www.secretescapes.com" # the base hostname & protocol for your site
+title: Lima Post Campaign Report
+baseurl: "/campaign-report/british-airways-lima"
+url: "http://mp.secretescapes.com"
 
 # Build settings
 markdown: kramdown

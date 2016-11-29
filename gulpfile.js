@@ -20,7 +20,7 @@ gulp.task('serve', function () {
       server: {
         baseDir: '_site/',
         routes: {
-          '/campaign-report/example': '_site/'
+          '/campaign-report/british-airways-lima': '_site/'
         }
       }
     });
@@ -50,7 +50,7 @@ gulp.task('htmlMinify', function() {
     collapseWhitespace: true,
     removeComments: true
   }))
-  .pipe(gulp.dest('./_site'))
+  .pipe(gulp.dest('./_site'));
 });
 
 // css autoprefix & min
@@ -61,7 +61,7 @@ gulp.task('optimiseCss', function() {
     cascade: false
   }))
   .pipe(cssmin())
-  .pipe(gulp.dest('./_site'))
+  .pipe(gulp.dest('./_site'));
 });
 
 // compress images
@@ -73,7 +73,7 @@ gulp.task('compressImages', function () {
     use: [pngquant()]
   }))
   .pipe(gulp.dest('./_site/img'))
-  .pipe(notify({ message: "Save up to date PDF from chrome", onLast: true }))
+  .pipe(notify({ message: "Save up to date PDF from chrome", onLast: true }));
 });
 
 

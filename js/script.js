@@ -12,9 +12,9 @@
     var utf8Escaped = '';
     for ( var i=0; i< utf8.length; i=i+2 ){
       utf8Escaped = utf8Escaped + '%' + utf8.substr(i,2);
-    };
+    }
     var convertedutf8 = unescape(utf8Escaped);
-    return convertedutf8
+    return convertedutf8;
   }
 
   // gets cookies & checks for name
@@ -24,7 +24,7 @@
     for(var i=0; i<ca.length; i++) {
       var c = ca[i];
       while (c.charAt(0)==' ') c = c.substring(1);
-      if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+      if (c.indexOf(name) === 0) return c.substring(name.length,c.length);
     }
     return "";
   }
@@ -54,7 +54,7 @@
 ///////////////////////////////////////
 
   var documentWindow          = $( window ),
-      password                = stringConverter('61'),
+      password                = stringConverter('4578706C6F726550657275'),
       passwordEntry           = $('.js-password-entry'),
       passwordForm            = $('.js-password-form'),
       passwordSection         = $('.js-password'),
@@ -70,8 +70,6 @@
       currentCookies          = document.cookie;
 
       // should go through scrip to make sure all the important variables are here
-      // should probably change both cookies so they dont expire for ages that way, people aren't annoyed when the prompt comes up a lot
-
 
 
   ///////////////////////////////////////
@@ -115,13 +113,6 @@
     // prevents scrolling sections, can only use keyboard to navigate
     $.fn.fullpage.setAllowScrolling(false);
 
-    // adds pdf link to download button
-    var downloadBtn = $('.js-pdf-download'),
-        pdfFileName = downloadBtn.data('pdf-name'),
-        pdfFilePath = "/pdf/" + pdfFileName;
-
-    downloadBtn.attr('href', pdfFilePath);
-
     // menu open toggle
     $('.js-menu-toggle, .fullpage-menu__link').on('click', function() {
       $('.menu').toggleClass('menu--open');
@@ -132,10 +123,10 @@
       // If message hasn't displayed, run the function
       if ( !(keyboardCookie) ) {
         // creates keyboard prompt element
-        contentTarget.prepend(keyboardPromptElement)
+        contentTarget.prepend(keyboardPromptElement);
         // init key press event handler to remove element
         documentWindow.on('keydown', keyboardPromptRemove);
-      };
+      }
     }
 
     // Removes keyboard navigation prompt
@@ -149,8 +140,8 @@
         documentWindow.off('keydown', keyboardPromptRemove);
         // creates cookie so keyboard prompt isn't repeatedly shown
         document.cookie = keyboardCookieName + "=1";
-      };
-    };
+      }
+    }
 
     // init keyboard prompt function
     keyboardPrompt();

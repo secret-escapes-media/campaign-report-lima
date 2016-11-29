@@ -1,6 +1,45 @@
 // all custom styles for the site
 
 
+.logo {
+  &--british-airways { max-width: 200px; }
+  &--carat { max-width: 100px; }
+}
+
+.logo-row {
+  margin-bottom: 1.5em;
+  &__item {
+    text-align: center;
+    & + & {
+      margin-top: 1em;
+    }
+  }
+  @include bp(large){
+    display: table;
+    width: 100%;
+    max-width: $large;
+    margin: 1em auto;
+    table-layout: fixed;
+    > * { vertical-align: middle; }
+    &__item {
+      & + & {
+        margin-top: 0;
+        padding-left: 1em;
+      }
+      display: table-cell;
+      width: 2%;
+      padding: .5em;
+    }
+    &--middle {
+    }
+    &--middle &__item {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+
+
 // ---------- button ----------
 
 .btn {
@@ -69,11 +108,11 @@ hr {
 .title {
   color: $white;
   text-align: center;
-  background-image: url('../img/bg/bg-title.jpg');
+  background-image: url('../img/bg/title.jpg');
 }
 
 .standard {
-  background-image: url('../img/bg/bg-title.jpg');
+  background-image: url('../img/bg/title.jpg');
   &__title {
     border-bottom: 1px solid $se-light-grey;
     padding-bottom: .25em;
@@ -136,10 +175,12 @@ hr {
   height: 100%;
   width: 100%;
   max-width: $xxxlarge;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 4em;
-  padding-right: 4em;
+  .standard--fullpage &,
+  .standard__panel--bottom &,
+  .standard__panel--top & {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .standard__content {
